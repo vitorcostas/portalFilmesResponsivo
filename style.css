@@ -1,3 +1,11 @@
+#titulo_query{
+    text-align: center;
+}
+/* div.card{      
+  
+    margin: 15px;
+} */
+
 body{
     background-image: url("images/background.jpg");
     background-size: 100%;

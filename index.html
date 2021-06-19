@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Top Filmes</title>
 </head>
-<body>
+<body onload="executaPesquisa()">
     <header class="header container">
         <div class="row espacamento">
             <div class="col-12">
@@ -38,8 +38,11 @@
 
                     <div class="col-3">
                         <div class="pesquisar input">
-                            <input type="text" size="15%">
-                            <a href=""><i class="fas fa-search"></i></a>
+                            <input id="txtPesquisa" type="text" size="15%">
+                            <button id="btn_pesquisa">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            
                         </div>
                     </div>
 
@@ -52,145 +55,141 @@
     </header>
 
     <main class="container main">
-
-        <section class="carrosel row">
-            <div class="col-12">
-                <div class="titulo row ">
-                    <div class="col-12 titulo_main">
-                        <h1>Lançamentos</h1>
+        <div id="query_filmes">
+            <section class="carrosel row">
+                <div class="col-12">
+                    <div class="titulo row ">
+                        <div class="col-12 titulo_main">
+                            <h1>Lançamentos</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="lancamentos row">
-                    <div class="carrosel col-12">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner ">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Yh-XpUlDjJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
-                                            <h3>Raya e O Último Dragão</h3>
-                                            <p>
-                                                Há muito tempo, no mundo de fantasia de Kumandra, humanos e dragões viviam juntos em harmonia. Mas quando uma força maligna ameaçou a terra, os dragões se sacrificaram para salvar a humanidade. Agora, 500 anos depois, o mesmo mal voltou e cabe a uma guerreira solitária, Raya, rastrear o lendário último dragão para restaurar a terra despedaçada e seu povo dividido.<br>
-                                                <br><b>Diretor:</b> Don Hall&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Adele Lim&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
-                                                <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
-                                                <br><b>Avaçiações:</b><br>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                            </p>
-                                            
+                    <div class="lancamentos row">
+                        <div class="carrosel col-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner ">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Yh-XpUlDjJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
+                                                <h3>Raya e O Último Dragão</h3>
+                                                <p>
+                                                    Há muito tempo, no mundo de fantasia de Kumandra, humanos e dragões viviam juntos em harmonia. Mas quando uma força maligna ameaçou a terra, os dragões se sacrificaram para salvar a humanidade. Agora, 500 anos depois, o mesmo mal voltou e cabe a uma guerreira solitária, Raya, rastrear o lendário último dragão para restaurar a terra despedaçada e seu povo dividido.<br>
+                                                    <br><b>Diretor:</b> Don Hall&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Adele Lim&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
+                                                    <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
+                                                    <br><b>Avaçiações:</b><br>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </p>
+                                                
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/t7FwypV69qc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
+                                                <h3>Red Dot</h3>
+                                                <p>
+                                                    Um casal faz uma viagem para reacender a chama do seu casamento, mas vê-se obrigado a fugir de um atirador desconhecido no meio de uma região inóspita da Suécia.<br>
+                                                    <br><b>Diretor:</b> Alain Darborg&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Per Dickson&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
+                                                    <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
+                                                    <br><b>Avaçiações:</b><br>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <i class="far fa-star"></i>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHtPm8v-yNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
+                                                <h3>Bliss</h3>
+                                                <p>
+                                                    Em Busca da Felicidade, Greg (Owen Wilson) é um homem divorciado que vê sua vida toda mudar quando conhece Isabel (Salma Hayek). Ela afirma que o mundo onde vivem não passa de uma simulação tecnológica e que ninguém, além deles, é real. Aos poucos, Greg passa a acreditar em Isabel.<br>
+                                                    <br><b>Diretor:</b> Don Hall&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Adele Lim&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
+                                                    <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
+                                                    <br><b>Avaçiações:</b><br>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>                                
                                 </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/t7FwypV69qc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
-                                            <h3>Red Dot</h3>
-                                            <p>
-                                                Um casal faz uma viagem para reacender a chama do seu casamento, mas vê-se obrigado a fugir de um atirador desconhecido no meio de uma região inóspita da Suécia.<br>
-                                                <br><b>Diretor:</b> Alain Darborg&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Per Dickson&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
-                                                <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
-                                                <br><b>Avaçiações:</b><br>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                                <i class="far fa-star"></i>
-                                            </p>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 carrosel">                    
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHtPm8v-yNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 sinopse">
-                                            <h3>Bliss</h3>
-                                            <p>
-                                                Em Busca da Felicidade, Greg (Owen Wilson) é um homem divorciado que vê sua vida toda mudar quando conhece Isabel (Salma Hayek). Ela afirma que o mundo onde vivem não passa de uma simulação tecnológica e que ninguém, além deles, é real. Aos poucos, Greg passa a acreditar em Isabel.<br>
-                                                <br><b>Diretor:</b> Don Hall&nbsp;&nbsp;&nbsp;&nbsp;<b>Roteiro:</b> Adele Lim&nbsp;&nbsp;&nbsp;&nbsp;<b>Esteia:</b>2021<br>
-                                                <br><b>Elenco:</b><br>Awkwafina &nbsp;|&nbsp; Kelly Marie &nbsp;|&nbsp; Gemma Chan <br>
-                                                <br><b>Avaçiações:</b><br>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </p>
-                                            
-                                        </div>
-                                    </div>
-                                </div>                                
-                            </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                
                     
-
+                        
+    
+                    </div>
                 </div>
-            </div>
+    
+            </section>
 
-        </section>
-
+        </div>
         <section class="row destaque">
             <div class="col-12 destaques">
                 <div class="row ">
-                    <div class="col-6 titulo_destaque">
+                    <div id="titulo_query" class="col-12">
                         <h2>Em Destaque</h2>
                     </div>
-                    
-                    <div class="col-6 botao">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Categorias
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Ação</a>
-                              <a class="dropdown-item" href="#">Aventura</a>
-                              <a class="dropdown-item" href="#">Suspense</a>
-                            </div>
-                          </div>
-                    </div>
-
                 </div>
-                <div class="row destaque">
-                    
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <img src="images/filme1.jpg" alt="Destaque 1">
+                <div id="tela_query" class="row destaque">
+                    <div class="card col-sm-12 col-md-6 col-lg-4" >
+                        <img src="./images/filme1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <img src="images/filme2.jpg" alt="Destaque 1">                        
+                    <div class="card col-sm-12 col-md-6 col-lg-4" >
+                        <img src="./images/filme2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <img src="images/filme3.jpg" alt="Destaque 1">                        
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <img src="images/filme4.jpg" alt="Destaque 1">                        
+                
+                    <div class="card col-sm-12 col-md-6 col-lg-4" >
+                        <img src="./images/filme3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>                          
                 
@@ -275,7 +274,6 @@
             </div>
 
         </section>
-
         <section class="entrevistas row">
             <div class="col-12">
                 <div class="row titulo_entrevistas">
@@ -411,5 +409,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
